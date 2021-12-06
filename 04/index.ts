@@ -61,14 +61,15 @@ const solveTwo = (data: string[]) => {
   const { numbers, boards } = getBingo(data);
 
   for (const number of numbers) {
-    for (let i = 0; i < boards.length; i++) {
-      const board = boards[i];
+    for (const board of [...boards]) {
       hitBoard(board, number);
       if (isWon(board)) {
         if (boards.length === 1) {
           return getScore(board) * number;
         }
-        boards.splice(i, 1);
+
+        const boardIndex = boards.indexOf(board);
+        boards.splice(boardIndex, 1);
       }
     }
   }
