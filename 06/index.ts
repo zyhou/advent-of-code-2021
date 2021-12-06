@@ -26,7 +26,7 @@ const solveTwo = (data: number[]) => {
     if (current !== undefined) {
       days.set(day, current + 1);
     } else {
-      days.set(day, 0);
+      days.set(day, 1);
     }
   }
 
