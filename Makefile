@@ -1,4 +1,5 @@
 YEAR = 2021
+DAY ?= $(shell date +%d)
 SHORT_DAY := $(shell echo ${DAY} | awk 'sub(/^0+/, "", $$1)')
 
 help: ## Display available commands
